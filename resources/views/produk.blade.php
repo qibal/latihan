@@ -10,8 +10,11 @@
     
     <div class="row">
         <div class="col-md-6">
-            <form action="" method="post">
-                <input type="text" name="" id="">
+            <form action="{{ route('tambah.produk') }}" method="post">
+                @csrf
+                <input type="text" name="nama_produk" id="" class="form-control" placeholder="nama produk">
+                <input type="text" name="harga_produk" id="" class="form-control" placeholder="harga_produk">
+                <button type="submit" class="btn btn-success">tambah</button>
             </form>
         </div>
         <div class="col-md-6">
@@ -26,8 +29,8 @@
                         <td>{{ $item->nama_produk }}</td>
                         <td>{{ $item->harga_produk }}</td>
                         <td>
-                            <a href="">Hapus</a>
-                            <a href="">Edit</a>
+                            <a href="/produk/hapus/{{ $item->id }}" class="btn btn-danger">Hapus</a>
+                            <a href="/produk/edit/{{ $item->id }}" class="btn btn-success">Edit</a>
                         </td>
                     </tr>
                 @endforeach
