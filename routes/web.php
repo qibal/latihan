@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::get('produk', [App\Http\Controllers\ProdukController::class, 'index']);
 Route::get('produk/hapus/{id}', [App\Http\Controllers\ProdukController::class, 'hapus'] );
+Route::post('produk/tambah', [App\Http\Controllers\ProdukController::class, 'tambah'] )->name('tambah.produk');

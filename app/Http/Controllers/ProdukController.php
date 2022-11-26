@@ -14,4 +14,8 @@ class ProdukController extends Controller
         $data['produk'] = Produk::find($id)->delete();
         return redirect()->back();
     }
+        public function tambah(Request $request){
+        $data['produk'] = Produk::insert($request->except('_token', '_method'));
+        return redirect()->back();
+    }
 }
