@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('produk', App\Http\Controllers\ProdukController::class);
+Route::get('produk', [App\Http\Controllers\ProdukController::class, 'index']);
+Route::get('produk/hapus/{id}', [App\Http\Controllers\ProdukController::class, 'hapus'] );
