@@ -11,7 +11,7 @@ class ProdukController extends Controller
         return view('produk', $data);
     }
     public function hapus($id){
-        $data['produk'] = Produ::find($id)->delete();
+        $data['produk'] = Produk::find($id)->delete();
         return redirect()->back();
     }
 }
